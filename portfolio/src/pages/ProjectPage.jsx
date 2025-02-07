@@ -3,9 +3,9 @@ import React from "react";
 // import llnl from "../assets/Projects/"
 // import belieze from "../assets/Projects/"
 import temp from "../assets/temp.png"
-import "./Projects.css";
+import "../styles/ProjectsPage.css";
 
-function Projects() {
+function ProjectsPage() {
     const projectss = [
         {
             title: "MewsiCat Mobile App",
@@ -46,4 +46,4 @@ function Projects() {
     )
 }
 
-export default Projects;
+export default ProjectsPage;

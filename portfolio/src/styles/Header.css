@@ -22,13 +22,13 @@
     gap: 1rem;
 }
 
-.nav a {
+.nav a, .nav .resume-link {
     color: #fff;
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s ease;
 }
 
-.nav a:hover {
+.nav a:hover, .nav .resume-link:hover {
     color: #ddd;
 }

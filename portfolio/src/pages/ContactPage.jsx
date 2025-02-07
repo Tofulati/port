@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
-import "./Contact.css"
+import "../styles/ContactPage.css"
 
-function Contact() {
+function ContactPage() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
@@ -80,4 +80,4 @@ function Contact() {
     );
 }
 
-export default Contact;
+export default ContactPage;

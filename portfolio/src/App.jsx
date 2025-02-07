@@ -1,28 +1,32 @@
-import { useState } from 'react'
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Header from "./components/Header"
-import About from "./components/About"
-import Research from "./components/Research"
-import Projects from './components/Projects'
-import Contact from './components/Contact'
+import ResearchPage from "./pages/ResearchPage";
+import ProjectPage from "./pages/ProjectPage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import ResumePage from "./pages/ResumePage";
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className='App'>
-      <Header />
-      <main>
-        <About />
-        <Research />
-        <Projects />
-        <Contact />
-      </main>
-      <footer>
-        <p>© 2025 Albert Ho. All rights reserved.</p>
-      </footer>
-    </div>
-  )
+    <Router>
+      <div className='App'>
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<AboutPage />} />
+            <Route path="/resume" element={<ResumePage />} />
+            <Route path="/research" element={<ResearchPage />} />
+            <Route path="/projects" element={<ProjectPage />} />
+            <Route path="/Contact" element={<ContactPage />} />
+          </Routes>
+        </main>
+        <footer>
+          <p>© 2025 Albert Ho. All rights reserved.</p>
+        </footer>
+      </div>
+    </Router>
+  );
 }
 
 export default App

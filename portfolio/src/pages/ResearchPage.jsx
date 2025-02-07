@@ -3,9 +3,9 @@ import React from "react";
 // import llnl from "../assets/Research/"
 // import belieze from "../assets/Research/"
 import temp from "../assets/temp.png"
-import "./Research.css";
+import "../styles/ResearchPage.css";
 
-function Research() {
+function ResearchPage() {
     const researchs = [
         {
             title: "Multi-omic profiling of age-specific human hematopoiesis",
@@ -46,4 +46,4 @@ function Research() {
     )
 }
 
-export default Research;
+export default ResearchPage;

@@ -1,21 +1,23 @@
 .about {
-    height: 100vh; /* Full viewport height */
+    min-height: 100vh; /* Changed from height to min-height for better adaptability */
     background-color: #E7DCC9;
     display: flex;
     justify-content: center;
-    align-items: center; /* Ensures everything is aligned vertically */
-    padding: 0 4rem; 
+    align-items: center;
+    padding: 2rem 4rem;
+    flex-wrap: wrap; /* Ensures items don't overflow */
 }
 
 .about-content {
     display: flex;
     flex-direction: row;
-    align-items: center; /* Centers both sections on the same vertical level */
+    align-items: center;
     justify-content: space-between;
     max-width: 1200px;
     width: 100%;
     height: auto;
     gap: 3rem;
+    flex-wrap: wrap;
 }
 
 .about-text {
@@ -23,7 +25,7 @@
     text-align: left;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Ensures vertical alignment */
+    justify-content: center;
 }
 
 .team-section {
@@ -51,6 +53,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     max-width: 300px;
+    width: 100%;
 }
 
 .team-image {
@@ -75,8 +78,8 @@
 
 .team-links {
     display: flex;
-    justify-content: center; /* Centers icons */
-    gap: 16px; /* Adds space between icons */
+    justify-content: center;
+    gap: 16px;
     padding: 0;
     margin-top: 8px;
 }
@@ -97,7 +100,7 @@
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .about-content {
         flex-direction: column;
         text-align: center;
@@ -115,6 +118,42 @@
     }
 }
 
+@media (max-width: 768px) {
+    .about {
+        padding: 2rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .team-member {
+        padding: 1.5rem;
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .about {
+        padding: 1rem;
+    }
+
+    .team-member {
+        max-width: 100%;
+    }
+
+    .team-image {
+        width: 100px;
+        height: 100px;
+    }
+}
+
 .linkedin-logo, .github-logo {
     width: 24px;
     height: 24px;
@@ -124,4 +163,3 @@
 .linkedin-logo:hover, .github-logo:hover {
     transform: scale(1.1);
 }
-

@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/AboutPage.css";
 import image from "../assets/about_img.png";
 import linkedinLogo from "../assets/Icons/linkedin.png";
-import githubLogo from "../assets/Icons/github.png"
+import githubLogo from "../assets/Icons/github.png";
 
 const people = [
   {
@@ -62,7 +62,7 @@ function AboutPage() {
                     </a>
                   </li>
                   <li>
-                  <a
+                    <a
                       href={person.githubUrl}
                       className="team-link"
                       target="_blank"
@@ -70,7 +70,7 @@ function AboutPage() {
                     >
                       <img
                         src={githubLogo}
-                        alt="LinkedIn"
+                        alt="GitHub"
                         className="github-logo"
                       />
                     </a>

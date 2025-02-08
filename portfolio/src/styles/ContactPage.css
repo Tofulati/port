@@ -1,47 +1,101 @@
 .contact {
-    padding: 4rem 2rem;
     background-color: #E7DCC9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
 }
-    
+
 .contact-content {
     max-width: 600px;
     margin: 0 auto;
+    text-align: center; /* Centering text similar to the inspo */
 }
-    
+
 .contact h2 {
-    font-size: 2rem;
+    font-size: 2.5rem; 
+    font-weight: bold;
     color: #333;
+    margin-bottom: 0.5rem;
+    margin-top: -0.5rem;
+    text-align: left;
+}
+
+.contact-content p {
+    font-size: 1.2rem;
+    color: #555;
     margin-bottom: 2rem;
-    text-align: center;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.contact-details {
+    margin-bottom: 2rem;
+    text-align: left; 
+}
+
+.contact-item {
+    display: flex;
+    align-items: left;
+    justify-content: left; 
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.contact-item a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+.icon {
+    height: 24px;
+    width: 24px;
+    color: #555;
+}
+
+/* Form Styling */
+.form-container {
+    background-color: rgb(163, 154, 137);
+    padding: 1.5rem;
+    border-radius: 8px;
 }
 
 .form-group {
     margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensuring inputs are centered */
 }
-    
+
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
     color: #333;
     font-weight: bold;
+    text-align: left;
+    width: 100%;
 }
-    
+
 .form-group input,
 .form-group textarea {
-    width: 100%;
+    width: 95%;
     padding: 0.75rem;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 10px;
     font-size: 1rem;
 }
-    
+
 .form-group textarea {
     height: 150px;
     resize: vertical;
 }
-    
+
 button[type="submit"] {
-    display: block;
     width: 100%;
     padding: 1rem;
     background-color: #333;
@@ -52,14 +106,20 @@ button[type="submit"] {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-    
+
 button[type="submit"]:hover {
     background-color: #555;
 }
-    
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     .contact-content {
+        max-width: 90%;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    button[type="submit"] {
         max-width: 100%;
     }
 }
-    

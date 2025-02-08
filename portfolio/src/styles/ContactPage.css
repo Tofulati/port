@@ -3,17 +3,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; 
+    min-height: 100vh;
+    padding: 2rem;
 }
 
 .contact-content {
     max-width: 600px;
     margin: 0 auto;
-    text-align: center; /* Centering text similar to the inspo */
+    text-align: center;
 }
 
 .contact h2 {
-    font-size: 2.5rem; 
+    font-size: 2.5rem;
     font-weight: bold;
     color: #333;
     margin-bottom: 0.5rem;
@@ -31,13 +32,12 @@
 
 .contact-details {
     margin-bottom: 2rem;
-    text-align: left; 
+    text-align: left;
 }
 
 .contact-item {
     display: flex;
-    align-items: left;
-    justify-content: left; 
+    align-items: center;
     gap: 10px;
     margin-bottom: 1rem;
 }
@@ -58,18 +58,19 @@
     color: #555;
 }
 
-/* Form Styling */
 .form-container {
     background-color: rgb(163, 154, 137);
     padding: 1.5rem;
     border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
 }
 
 .form-group {
     margin-bottom: 1.5rem;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Ensuring inputs are centered */
+    align-items: center;
 }
 
 .form-group label {
@@ -83,7 +84,7 @@
 
 .form-group input,
 .form-group textarea {
-    width: 95%;
+    width: 100%;
     padding: 0.75rem;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -111,15 +112,12 @@ button[type="submit"]:hover {
     background-color: #555;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .contact-content {
-        max-width: 90%;
+    .contact {
+        flex-direction: column;
+        padding: 1.5rem;
     }
-
-    .form-group input,
-    .form-group textarea,
-    button[type="submit"] {
+    .contact-content {
         max-width: 100%;
     }
 }

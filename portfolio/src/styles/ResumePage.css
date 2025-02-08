@@ -37,8 +37,8 @@
 
 .download-btn {
     padding: 0.75rem 1.5rem;
-    background-color: #2563EB;
-    color: white;
+    background-color: #333;
+    color: #fff;
     font-weight: 700;
     border-radius: 50px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
@@ -48,7 +48,7 @@
 }
 
 .download-btn:hover {
-    background-color: #1E40AF;
+    background-color: #555;
     transform: scale(1.05);
 }
 
@@ -72,7 +72,7 @@
 .experience-details h3 {
     font-size: 1.2rem;
     font-weight: 900;
-    color: #2563EB;
+    color: black;
     margin-bottom: 0.5rem;
 }
 
@@ -117,7 +117,7 @@
 .skills-details h3 {
     font-size: 1.2rem;
     font-weight: 900;
-    color: #2563EB;
+    color: black;
     margin-bottom: 0.5rem;
 }
 
@@ -176,7 +176,7 @@
 .education-details h3 {
     font-size: 1.2rem;
     font-weight: 900;
-    color: #2563EB;
+    color: black;
     margin-bottom: 0.5rem;
 }
 

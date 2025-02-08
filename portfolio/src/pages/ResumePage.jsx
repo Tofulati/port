@@ -26,7 +26,7 @@ function ResumePage() {
             <h2 className="experience-title">Experience</h2>
 
             <a href={resumePDF} download="AlbertHo_Resume.pdf" className="download-btn">
-            DOWNLOAD CV
+            DOWNLOAD RESUME
             </a>
         </section>
 

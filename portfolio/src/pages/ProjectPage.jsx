@@ -1,8 +1,5 @@
 import React from "react";
-// import gep from "../assets/Projects/"
-// import llnl from "../assets/Projects/"
-// import belieze from "../assets/Projects/"
-import temp from "../assets/temp.png"
+import temp from "../assets/Icons/github.png"
 import "../styles/ProjectsPage.css";
 
 function ProjectsPage() {

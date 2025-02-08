@@ -1,3 +1,6 @@
+@import "./styles/Header.css";
+
 @tailwind base;
 @tailwind components;
-@tailwind utili
+@tailwind utilities;
+

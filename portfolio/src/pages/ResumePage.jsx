@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import resumePDF from "../assets/AlbertHo_Resume.pdf";
 import cpp from "../assets/Icons/c-.png";
 import css from "../assets/Icons/css-3.png";
@@ -14,19 +15,46 @@ import UCM from "../assets/UCM.png";
 import "../styles/ResumePage.css"; // Import the CSS file
 
 function ResumePage() {
-  return (
-    <div className="resume-page">
-        <section className="resume-header">
-            <div className="resume-title">
-            <h2>My Resume</h2>
-            </div>
-        </section>
+    const [scrollY, setScrollY] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollY(window.scrollY);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    // Calculate gradient based on scroll position
+    const getGradient = () => {
+        const startColor = [231, 220, 201]; // Beige (#E7DCC9)
+        const endColor = [203, 187, 160];  // Darker beige (#CBBBA0)
+
+        const ratio = Math.min(scrollY / 500, 1); // Limits the change up to 500px scroll
+        const r = Math.round(startColor[0] * (1 - ratio) + endColor[0] * ratio);
+        const g = Math.round(startColor[1] * (1 - ratio) + endColor[1] * ratio);
+        const b = Math.round(startColor[2] * (1 - ratio) + endColor[2] * ratio);
+
+        return `rgb(${r}, ${g}, ${b})`;
+    };
+
+    return (
+        <div 
+            className="resume-page" 
+            style={{ background: `linear-gradient(to bottom, ${getGradient()}, #CBBBA0)`, minHeight: "100vh", transition: "background 0.3s ease-in-out" }}
+        >
+            <section className="resume-header">
+                <div className="resume-title" style={{ textShadow: "2px 2px 5px rgba(0, 0, 0, 0.2)" }}>
+                    <h2>My Resume</h2>
+                </div>
+            </section>
 
         <section className="experience-container">
-            <h2 className="experience-title">Experience</h2>
+            <h2 className="experience-title" style={{ textShadow: "2px 2px 5px rgba(0, 0, 0, 0.2)" }}>Experience</h2>
 
             <a href={resumePDF} download="AlbertHo_Resume.pdf" className="download-btn">
-            DOWNLOAD RESUME
+                DOWNLOAD RESUME
             </a>
         </section>
 
@@ -38,7 +66,7 @@ function ResumePage() {
                     <p>University of California, San Diego Health</p>
                     <p>La Jolla, CA</p>
                 </div>
-                <div className="experience-description">
+                <div className="experience-description" style={{ fontWeight: "500", letterSpacing: "0.5px" }}>
                     <p>
                     • Utilized clustering techniques such as UMAP and conducted differential expression analysis using *CAT data.
                     Retrieved data revealed additional gene expression patterns that were not as prevalent in previous research.
@@ -60,9 +88,9 @@ function ResumePage() {
                     <p>Lawrence Livermore National Laboratory</p>
                     <p>Livermore, CA</p>
                 </div>
-                <div className="experience-description">
+                <div className="experience-description" style={{ fontWeight: "500", letterSpacing: "0.5px" }}>
                     <p>
-                    • Enhanced diagnostic recall scoring for ventricular aarrhythmias by developing a machine learning model. Compared
+                    • Enhanced diagnostic recall scoring for ventricular arrhythmias by developing a machine learning model. Compared
                     algorithms like Logistic Regression, Random Forest, and CNNs, achieving highest recall with XGBoost.
                     </p>
                     <p>
@@ -74,164 +102,39 @@ function ResumePage() {
                     </p>
                 </div>
             </div>
-
-            <div className="experience-item">
-                <div className="experience-details">
-                    <h3>May 2023 - January 2024</h3>
-                    <p className="job-title">Student Research Intern</p>
-                    <p>University of California, Merced: School of Social Sciences and Humanities</p>
-                    <p>Merced, CA</p>
-                </div>
-                <div className="experience-description">
-                    <p>
-                    • Developed an Unreal Engine 3D simulation application of an archaeological site in Central Valley, California
-                    </p>
-                    <p>
-                    • Implemented .fbx scan models, realistic lighting textures, and object interactions utilizing C++/Unreal modules
-                    </p>
-                    <p>
-                    • Presented finalized application on UC Merced’s Wide Area Visualization Environment
-                    </p>
-                </div>
-            </div>
-
-            <div className="experience-item">
-                <div className="experience-details">
-                    <h3>September 2022 - January 2024</h3>
-                    <p className="job-title">Frontend Web Developer</p>
-                    <p>Association for Computing Machinery</p>
-                    <p>Merced, CA</p>
-                </div>
-                <div className="experience-description">
-                    <p>
-                    • Developed a functional, responsive website interface by creating dynamic text and image displays using HTML, 
-                    CSS, and JavaScript. Enhanced scalability and development efficiency by integrating React into the workflow.
-                    </p>
-                    <p>
-                    • Optimized data integration processes by connecting the front-end to a Firebase database.
-                    </p>
-                </div>
-            </div>
         </section>
 
         <section className="education-container">
-            <h2 className="education-title">Education</h2>
+            <h2 className="education-title" style={{ textShadow: "2px 2px 5px rgba(0, 0, 0, 0.2)" }}>Education</h2>
         </section>
 
         <section className="education-section">
             <div className="education-item">
                 <div className="education-details">
-                    <img src={UCSD}></img>
+                    <img src={UCSD} alt="UCSD Logo"></img>
                     <h3>University of California, San Diego</h3>
                 </div>
-                <div className="education-description">
-                    <p>
-                    La Jolla, CA
-                    </p>
-                    <p>
-                    Bachelor’s of Science, Computer Science
-                    </p>
-                    <p>
-                    September 2024 - June 2026
-                    </p>
-                    <p>
-                    • Relevant coursework: Data Structures, Algorithms, Engineering Probability and Statistics
-                    </p>
+                <div className="education-description" style={{ fontWeight: "500", letterSpacing: "0.5px" }}>
+                    <p>La Jolla, CA</p>
+                    <p>Bachelor’s of Science, Computer Science</p>
+                    <p>September 2024 - June 2026</p>
+                    <p>• Relevant coursework: Data Structures, Algorithms, Engineering Probability and Statistics</p>
                 </div>
             </div>
 
             <div className="education-item">
                 <div className="education-details">
-                    <img src={UCM}></img>
+                    <img src={UCM} alt="UCM Logo"></img>
                     <h3>University of California, Merced</h3>
                 </div>
-                <div className="education-description">
-                    <p>
-                    Merced, CA
-                    </p>
-                    <p>
-                    Bachelor’s of Science, Computer Science and Engineering
-                    </p>
-                    <p>
-                    August 2022 - May 2024
-                    </p>
-                    <p>
-                    • Relevant coursework: Data Structures, Assembly and Computer Language, Discrete Math
-                    </p>
+                <div className="education-description" style={{ fontWeight: "500", letterSpacing: "0.5px" }}>
+                    <p>Merced, CA</p>
+                    <p>Bachelor’s of Science, Computer Science and Engineering</p>
+                    <p>August 2022 - May 2024</p>
+                    <p>• Relevant coursework: Data Structures, Assembly and Computer Language, Discrete Math</p>
                 </div>
             </div>
         </section>
-
-        {/* <section className="skills-container">
-            <h2 className="skills-title">Skills</h2>
-        </section>
-
-        <section className="skills-section">
-            <div className="skills-item">
-                <div className="skills-details">
-                    <h3>Languages</h3>
-                </div>
-                <div className="skills-description">
-                    <img src={python}></img>
-                    <img src={r}></img>
-                    <img src={cpp}></img>
-                    <img src={html}></img>
-                    <img src={css}></img>
-                    <img src={java}></img>
-                </div>
-            </div>
-
-            <div className="skills-item">
-                <div className="skills-details">
-                    <h3>Frameworks</h3>
-                </div>
-                <div className="skills-description">
-                    <img src={react}></img>
-                    <img src={node}></img>
-                </div>
-            </div>
-
-            <div className="skills-item">
-                <div className="skills-details">
-                    <h3>Developer Tools</h3>
-                </div>
-                <div className="skills-description">
-                    <p>Git</p>
-                    <p>Github</p>
-                    <p>Visual Studio Code</p>
-                    <p>Firebase</p>
-                    <p>PyCharm</p>
-                    <p>XCode</p>
-                    <p>Unreal Engine</p>
-                </div>
-            </div>
-
-            <div className="skills-item">
-                <div className="skills-details">
-                    <h3>Libraries</h3>
-                </div>
-                <div className="skills-description">
-                    <p>scikit-learn</p>
-                    <p>sklearn</p>
-                    <p>tensorflow</p>
-                    <p>PyTorch</p>
-                    <p>Jupyter</p>
-                    <p>pandas</p>
-                    <p>NumPy</p>
-                    <p>Matplotlib</p>
-                    <p>D3.js</p>
-                </div>
-            </div>
-
-            <div className="skills-item">
-                <div className="skills-details">
-                    <h3>Certifications</h3>
-                </div>
-                <div className="skills-description">
-                    <p>CodePath Certificate in Intro to Android Mobile Development</p>
-                </div>
-            </div>
-        </section> */}
     </div>
   );
 }

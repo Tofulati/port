@@ -1,11 +1,12 @@
 .about {
-    min-height: 100vh; /* Changed from height to min-height for better adaptability */
-    background-color: #E7DCC9;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2rem 4rem;
-    flex-wrap: wrap; /* Ensures items don't overflow */
+    flex-wrap: wrap;
+    transition: background 0.3s ease-in-out; /* Smooth transition */
+    background-color: #E7DCC9;
 }
 
 .about-content {
@@ -26,6 +27,17 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: #3C2F2F; /* Darker text for better contrast */
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2B1D1D; /* Darker header */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .team-section {
@@ -47,10 +59,10 @@
 }
 
 .team-member {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.9); /* Slight transparency */
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     text-align: center;
     max-width: 300px;
     width: 100%;
@@ -65,15 +77,14 @@
 }
 
 .team-name {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #2B1D1D;
 }
 
 .team-role {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: #4A3B3B;
 }
 
 .team-links {
@@ -89,14 +100,17 @@
 }
 
 .team-link {
-    color: #0073b1;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
 }
 
-.team-link:hover {
-    text-decoration: underline;
+.linkedin-logo, .github-logo {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.linkedin-logo:hover, .github-logo:hover {
+    transform: scale(1.2);
 }
 
 /* Responsive Adjustments */
@@ -111,6 +125,7 @@
     .about-text {
         max-width: 100%;
         align-items: center;
+        text-align: center;
     }
 
     .team-section {
@@ -152,14 +167,4 @@
         width: 100px;
         height: 100px;
     }
-}
-
-.linkedin-logo, .github-logo {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.2s ease-in-out;
-}
-
-.linkedin-logo:hover, .github-logo:hover {
-    transform: scale(1.1);
 }

@@ -1,7 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/ResearchPage.css";
 
 function ResearchPage() {
+    const [scrollY, setScrollY] = useState(0);
+      
+        useEffect(() => {
+            const handleScroll = () => {
+                setScrollY(window.scrollY);
+            };
+    
+            window.addEventListener("scroll", handleScroll);
+            return () => window.removeEventListener("scroll", handleScroll);
+        }, []);
+    
+        // Calculate gradient based on scroll position
+        const getGradient = () => {
+            const startColor = [231, 220, 201]; // Beige (#E7DCC9)
+            const endColor = [203, 187, 160];  // Darker beige (#CBBBA0)
+    
+            const ratio = Math.min(scrollY / 500, 1); // Limits the change up to 500px scroll
+            const r = Math.round(startColor[0] * (1 - ratio) + endColor[0] * ratio);
+            const g = Math.round(startColor[1] * (1 - ratio) + endColor[1] * ratio);
+            const b = Math.round(startColor[2] * (1 - ratio) + endColor[2] * ratio);
+    
+            return `rgb(${r}, ${g}, ${b})`;
+    };  
+    
     const [openDropdown, setOpenDropdown] = useState(null);
 
     const toggleDropdown = (index) => {
@@ -30,7 +54,9 @@ function ResearchPage() {
     ];
 
     return (
-        <section id="research" className="research">
+        <section id="research" className="research"
+        style={{ background: `linear-gradient(to bottom, ${getGradient()}, #CBBBA0)`, minHeight: "100vh", transition: "background 0.3s ease-in-out" }}
+        >
             <div className="research-content">
                 <h2>My Research</h2>
                 <div className="research-grid">

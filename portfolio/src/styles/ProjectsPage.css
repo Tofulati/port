@@ -14,7 +14,7 @@
     
 .projects-content h2 {
     font-size: 2.2rem; /* Smaller than before */
-    color: black;
+    color: #2B1D1D;
 }
     
 .projects-grid {
@@ -43,13 +43,13 @@
     
 .projects-card h3 {
     font-size: 1.25rem;
-    color: #333;
+    color: #2B1D1D;
     margin: 1rem;
 }
     
 .projects-card p {
     font-size: 1rem;
-    color: #666;
+    color: #2B1D1D;
     margin: 0 1rem 1rem;
     line-height: 1.5;
 }

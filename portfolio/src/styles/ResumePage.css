@@ -8,7 +8,7 @@
 }
 
 .resume-page h2 {
-    color: black;
+    color: #3C2F2F;;
 }
 
 .resume-header {
@@ -19,7 +19,7 @@
 
 .resume-title {
     font-size: 1.5rem;
-    color: black;
+    color: #3C2F2F;;
 }
 
 .experience-container, .skills-container, .education-container {
@@ -78,18 +78,19 @@
 .experience-details, .skills-details, .education-details {
     flex: 1;
     text-align: left;
+    color: #2B1D1D;
 }
 
 .experience-details h3, .skills-details h3, .education-details h3 {
     font-size: 1.2rem;
     font-weight: 900;
-    color: black;
+    color: #3C2F2F;;
     margin-bottom: 0.5rem;
 }
 
 .experience-description, .skills-description, .education-description {
     flex: 2;
-    color: #333;
+    color: #3C2F2F;;
     line-height: 1.6;
     font-size: 1rem;
 }

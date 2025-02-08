@@ -17,6 +17,7 @@
     margin: 0;
 }
 
+/* Default navigation (desktop) */
 .nav {
     display: flex;
     gap: 1rem;
@@ -31,4 +32,46 @@
 
 .nav a:hover, .nav .resume-link:hover {
     color: #ddd;
+}
+
+/* Mobile styles */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav a {
+        padding: 10px;
+        font-size: 1.2rem;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
 }

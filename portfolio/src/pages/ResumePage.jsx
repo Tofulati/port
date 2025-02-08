@@ -61,8 +61,8 @@ function ResumePage() {
         <section className="experience-section">
             <div className="experience-item">
                 <div className="experience-details">
-                    <h3>October 2024 - Present</h3>
-                    <p className="job-title">Student Research Intern</p>
+                    <h3>Student Research Intern</h3>
+                    <p className="job-title">October 2024 - Present</p>
                     <p>University of California, San Diego Health</p>
                     <p>La Jolla, CA</p>
                 </div>
@@ -83,8 +83,8 @@ function ResumePage() {
 
             <div className="experience-item">
                 <div className="experience-details">
-                    <h3>July 2024 - August 2024</h3>
-                    <p className="job-title">Data Science Intern</p>
+                    <h3>Data Science Intern</h3>
+                    <p className="job-title">July 2024 - August 2024</p>
                     <p>Lawrence Livermore National Laboratory</p>
                     <p>Livermore, CA</p>
                 </div>
@@ -99,6 +99,26 @@ function ResumePage() {
                     </p>
                     <p>
                     • Processed and labeled large datasets (over 16,000 samples) using Pandas dataframes for training and testing
+                    </p>
+                </div>
+            </div>
+
+            <div className="experience-item">
+                <div className="experience-details">
+                    <h3>Student Research Intern</h3>
+                    <p className="job-title">May 2023 - January 2024</p>
+                    <p>University of California, Merced: School of Social Sciences and Humanities</p>
+                    <p>Merced, CA</p>
+                </div>
+                <div className="experience-description" style={{ fontWeight: "500", letterSpacing: "0.5px" }}>
+                    <p>
+                    • Developed an Unreal Engine 3D simulation application of an archaeological site in Central Valley, California
+                    </p>
+                    <p>
+                    • Implemented .fbx scan models, realistic lighting textures, and object interactions utilizing C++/Unreal modules
+                    </p>
+                    <p>
+                    • Presented finalized application on UC Merced’s Wide Area Visualization Environment
                     </p>
                 </div>
             </div>

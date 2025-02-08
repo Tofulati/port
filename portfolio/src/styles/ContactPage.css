@@ -5,12 +5,17 @@
     align-items: center;
     min-height: 100vh;
     padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .contact-content {
     max-width: 600px;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 .contact h2 {
@@ -33,6 +38,7 @@
 .contact-details {
     margin-bottom: 2rem;
     text-align: left;
+    width: 100%;
 }
 
 .contact-item {
@@ -40,6 +46,7 @@
     align-items: center;
     gap: 10px;
     margin-bottom: 1rem;
+    flex-wrap: wrap;
 }
 
 .contact-item a {
@@ -64,6 +71,7 @@
     border-radius: 8px;
     width: 100%;
     max-width: 600px;
+    box-sizing: border-box;
 }
 
 .form-group {
@@ -71,6 +79,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .form-group label {
@@ -89,6 +98,7 @@
     border: 1px solid #ddd;
     border-radius: 10px;
     font-size: 1rem;
+    box-sizing: border-box;
 }
 
 .form-group textarea {
@@ -119,5 +129,12 @@ button[type="submit"]:hover {
     }
     .contact-content {
         max-width: 100%;
+        padding: 1rem;
+    }
+    .form-container {
+        padding: 1rem;
+    }
+    .form-group label {
+        text-align: center;
     }
 }

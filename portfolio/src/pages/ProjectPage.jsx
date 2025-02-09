@@ -38,7 +38,7 @@ function ProjectsPage() {
         {
             title: "Earth Equity (NASA Space Apps Challenge)",
             description: "A webpage project utillizing NASA time-series datasets for stock market trend indicators for data visualization.",
-            project_link: "http://earthequity.study/",
+            project_link: "https://github.com/hajin-park/Earth-Equity",
             imageUrl: temp,
         },
         {
